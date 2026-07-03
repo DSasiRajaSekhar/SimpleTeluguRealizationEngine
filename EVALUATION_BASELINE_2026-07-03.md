@@ -18,6 +18,8 @@ Original evaluation files run: 14.
 
 Krishnamurti evaluation files run: 36.
 
+Possessive evaluation files run: 5.
+
 Runtime failures: none.
 
 ## Original 14 Evaluation Outputs
@@ -81,6 +83,16 @@ Runtime failures: none.
 | kg_043_ixi_BAgavawaM.xml | ixi BAgavawaM | Supported |
 | kg_045_ivi_picci_kAgiwAlu.xml | ivi picci kAgiwAlu | Supported |
 
+## Possessive Evaluation Outputs
+
+| File | Output | Status |
+| --- | --- | --- |
+| poss_001_nI_pustakaM.xml | nI pustakaM | Supported |
+| poss_002_mI_pustakaM.xml | mI pustakaM | Supported |
+| poss_003_vAdi_illu.xml | vAdi illu | Supported |
+| poss_004_vAlYlYa_illu.xml | vAlYlYa illu | Supported |
+| poss_005_rAmudi_pustakaM.xml | rAmudi pustakaM | Supported |
+
 ## Current Scope Notes
 
 The active baseline covers:
@@ -90,7 +102,7 @@ The active baseline covers:
 - selected irregular plural entries,
 - numeral quantifiers for object count and person count,
 - coupled proper nouns with `mariyu`,
-- possessive modifiers generated from root pronouns using `casemarker="yoVkka"`,
+- possessive modifiers generated from root pronouns/nouns using `casemarker="yoVkka"`,
 - simple demonstrative/pronoun nominal sentences,
 - adjective modifier plus noun phrases.
 
