@@ -13,6 +13,7 @@ public class SOCElement
  private AdjectiveElement adj=null;
  private QuantifierElement quantifier=null;
  private ProperNounCompoundElement properNounCompound=null;
+ private PossessiveElement possessive=null;
  private Pos pos;
  private Gender gender;
  private Num number;
@@ -69,6 +70,14 @@ public void setProperNounCompoundElement(ProperNounCompoundElement properNounCom
 public ProperNounCompoundElement getProperNounCompoundElement()
 {
  return this.properNounCompound;
+}
+public void setPossessiveElement(PossessiveElement possessive)
+{
+ this.possessive=possessive;
+}
+public PossessiveElement getPossessiveElement()
+{
+ return this.possessive;
 }
 public void setPos(Pos pos)
 {

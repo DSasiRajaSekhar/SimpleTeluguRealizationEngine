@@ -21,12 +21,14 @@ private NounClass nc;
 	private AdjectivePhraseBuilder apb;
 	private QuantifierPhraseBuilder qpb;
 	private ProperNounCompoundPhraseBuilder pncpb;
-        private String quantifierPhrase = "", adjectivePhrase = "", subNounPhrase = "", nounPhrase = "";
+	private PossessivePhraseBuilder ppb;
+        private String possessivePhrase = "", quantifierPhrase = "", adjectivePhrase = "", subNounPhrase = "", nounPhrase = "";
        public NounPhraseBuilder()
         {
           apb = new AdjectivePhraseBuilder();
           qpb = new QuantifierPhraseBuilder();
           pncpb = new ProperNounCompoundPhraseBuilder();
+          ppb = new PossessivePhraseBuilder();
           nc = new NounClass();
           pc = new PronounClass();
 
@@ -40,6 +42,11 @@ private NounClass nc;
                          pncpb.setProperNounCompoundPhrase(soc.getProperNounCompoundElement());
                          subNounPhrase=pncpb.getProperNounCompoundPhrase();
                          return;
+                        }
+                        if(soc.getPossessiveElement() != null)
+                        {
+                         ppb.setPossessivePhrase(soc.getPossessiveElement());
+                         possessivePhrase=ppb.getPossessivePhrase();
                         }
                         if(soc.getQuantifierElement() != null)
                         {
@@ -82,7 +89,8 @@ private NounClass nc;
 	
         public String getNounPhrase()
         {
-          nounPhrase = joinPhrases(quantifierPhrase, adjectivePhrase, subNounPhrase);
+          nounPhrase = joinPhrases(possessivePhrase, quantifierPhrase, adjectivePhrase, subNounPhrase);
+			possessivePhrase = "";
 			quantifierPhrase = "";
 			adjectivePhrase = "";
 			subNounPhrase = "";
@@ -93,7 +101,7 @@ private NounClass nc;
 
 }
 
-	private String joinPhrases(String first, String second, String third) {
+	private String joinPhrases(String first, String second, String third, String fourth) {
 		String phrase = "";
 		if (first != null)
 			first = first.trim();
@@ -101,12 +109,16 @@ private NounClass nc;
 			second = second.trim();
 		if (third != null)
 			third = third.trim();
+		if (fourth != null)
+			fourth = fourth.trim();
 		if (first != null && !first.equals(""))
 			phrase = first;
 		if (second != null && !second.equals(""))
 			phrase = phrase.equals("") ? second : phrase + " " + second;
 		if (third != null && !third.equals(""))
 			phrase = phrase.equals("") ? third : phrase + " " + third;
+		if (fourth != null && !fourth.equals(""))
+			phrase = phrase.equals("") ? fourth : phrase + " " + fourth;
 		return phrase;
 	}
 

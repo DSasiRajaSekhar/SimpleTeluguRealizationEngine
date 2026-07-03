@@ -16,7 +16,7 @@ Compilation result: passed.
 
 Original evaluation files run: 14.
 
-Krishnamurti evaluation files run: 33.
+Krishnamurti evaluation files run: 36.
 
 Runtime failures: none.
 
@@ -74,7 +74,10 @@ Runtime failures: none.
 | kg_029_vIdu_nOkaru.xml | vIdu nOkaru | Supported |
 | kg_031_awanu_rAmArAvu.xml | awanu rAmArAvu | Supported |
 | kg_032_ImeV_sarasvawi.xml | ImeV sarasvawi | Supported |
+| kg_038_awanu_nA_snehiwudu.xml | awanu nA snehiwudu | Supported |
 | kg_040_axi_padakakurci.xml | axi padakakurci | Supported |
+| kg_041_vAru_mA_vAru.xml | vAru mA vAru | Supported |
+| kg_042_nA_peru_rAmArAvu.xml | nA peru rAmArAvu | Supported |
 | kg_043_ixi_BAgavawaM.xml | ixi BAgavawaM | Supported |
 | kg_045_ivi_picci_kAgiwAlu.xml | ivi picci kAgiwAlu | Supported |
 
@@ -87,12 +90,12 @@ The active baseline covers:
 - selected irregular plural entries,
 - numeral quantifiers for object count and person count,
 - coupled proper nouns with `mariyu`,
+- possessive modifiers generated from root pronouns using `casemarker="yoVkka"`,
 - simple demonstrative/pronoun nominal sentences,
 - adjective modifier plus noun phrases.
 
 The following are deliberately not included as supported generated XML examples yet:
 
-- possessive modifier phrases,
 - honorific `gAru` forms,
 - emphatic `-e` forms,
 - negative equational forms,

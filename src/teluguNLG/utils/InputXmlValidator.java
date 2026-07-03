@@ -72,12 +72,22 @@ public class InputXmlValidator {
 	private static void validateNounLikePhrase(Element phrase, String phraseName, int index) {
 		Element head = directWordChild(phrase);
 		Element quantifier = directElementChild(phrase, "quantifier");
+		Element possessive = directElementChild(phrase, "possessive");
 		Element properNounCompound = directElementChild(phrase, "propernouncompound");
+		if (directElementChildCount(phrase, "possessive") > 1) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: only one <possessive> is supported.");
+		}
 		if (quantifier != null && properNounCompound != null) {
 			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: <quantifier> and <propernouncompound> cannot be used in the same phrase.");
 		}
+		if (possessive != null && properNounCompound != null) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: <possessive> and <propernouncompound> cannot be used in the same phrase.");
+		}
 		if (quantifier != null) {
 			validateQuantifier(quantifier, phraseName, index);
+		}
+		if (possessive != null) {
+			validatePossessive(possessive, phraseName, index);
 		}
 		if (properNounCompound != null) {
 			validateProperNounCompound(properNounCompound, phraseName, index);
@@ -107,6 +117,36 @@ public class InputXmlValidator {
 		requireAttribute(head, "number", phraseName, index);
 		requireAttribute(head, "person", phraseName, index);
 		requireAttribute(head, "casemarker", phraseName, index);
+	}
+
+	private static void validatePossessive(Element possessive, String phraseName, int index) {
+		if (!possessive.hasAttribute("type")) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: <possessive> is missing required attribute \"type\".");
+		}
+		if (!"genitive".equals(possessive.getAttribute("type"))) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: <possessive> currently supports only type=\"genitive\".");
+		}
+
+		Element word = directWordChild(possessive);
+		if (word == null) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: <possessive> must contain a direct <word>.");
+		}
+		if (directElementChildCount(possessive, "word") != 1) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: <possessive> must contain exactly one direct <word>.");
+		}
+
+		requireAttribute(word, "pos", phraseName, index);
+		String pos = word.getAttribute("pos");
+		if (!"noun".equals(pos) && !"pronoun".equals(pos)) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: possessive <word> must have pos=\"noun\" or pos=\"pronoun\".");
+		}
+		requireAttribute(word, "gender", phraseName, index);
+		requireAttribute(word, "number", phraseName, index);
+		requireAttribute(word, "person", phraseName, index);
+		requireAttribute(word, "casemarker", phraseName, index);
+		if (!"yoVkka".equals(word.getAttribute("casemarker"))) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: possessive <word> must have casemarker=\"yoVkka\".");
+		}
 	}
 
 	private static void validateProperNounCompound(Element properNounCompound, String phraseName, int index) {
@@ -220,6 +260,18 @@ public class InputXmlValidator {
 			}
 		}
 		return null;
+	}
+
+	private static int directElementChildCount(Element parent, String childName) {
+		int count = 0;
+		NodeList children = parent.getChildNodes();
+		for (int i = 0; i < children.getLength(); i++) {
+			Node child = children.item(i);
+			if (child.getNodeType() == Node.ELEMENT_NODE && childName.equals(child.getNodeName())) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	private static Element wordInsideModifierWithPos(Element phrase, String firstPos, String secondPos) {

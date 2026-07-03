@@ -17,6 +17,7 @@ import teluguNLG.elements.SOCElement;
 import teluguNLG.elements.AdjectiveElement;
 import teluguNLG.elements.QuantifierElement;
 import teluguNLG.elements.ProperNounCompoundElement;
+import teluguNLG.elements.PossessiveElement;
 
 public class SOCElementBuilder {
 
@@ -24,6 +25,7 @@ private SOCElement soc;
 private AdjectiveElement ae;
 private QuantifierElement qe;
 private ProperNounCompoundElement pne;
+private PossessiveElement pe;
 
         public SOCElementBuilder()
         {
@@ -42,6 +44,7 @@ private ProperNounCompoundElement pne;
                                soc.setAdjectiveElement(null);
                                soc.setQuantifierElement(null);
                                soc.setProperNounCompoundElement(null);
+                               soc.setPossessiveElement(null);
                                NodeList nl=n.getChildNodes();
 		for (int j =0; j < nl.getLength(); j++) {
                    if(nl.item(j).getNodeName().equals("#text"))
@@ -73,6 +76,12 @@ private ProperNounCompoundElement pne;
                                     if(pne.getFinalElement() != null)
                                      pne.getFinalElement().setType(type);
                                     soc.setProperNounCompoundElement(pne);
+                            }
+	                      else if (n2.getNodeName().equals("possessive")){
+                                 PossessiveElementBuilder peb=new PossessiveElementBuilder();
+                                    peb.setPossessiveElement(n2);
+				    pe=peb.getPossessiveElement();
+                                    soc.setPossessiveElement(pe);
                             }
                         else{	
                                 GrammaticalFunction gf=GrammaticalFunction.getGrammaticalFunction(n2.getNodeName());

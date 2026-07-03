@@ -41,11 +41,11 @@ Batch 03 classification
 | kg_035 | vAru dAktarugAru | respectful/plural pronoun + honorific/professional noun | needs XML design | Same `gAru` honorific issue. |
 | kg_036 | vIru murwigAru | respectful/proximal pronoun + honorific proper noun | needs XML design | Same `gAru` honorific issue. |
 | kg_037 | Ame sIwammagAru | feminine pronoun + honorific proper noun | needs XML design | Same `gAru` honorific issue, with a proper-name base. |
-| kg_038 | Awanu nA snehiwudu | pronoun subject + possessive modifier + noun predicate | needs XML design | Current modifier path is adjective-based; possessive pronoun modifiers need their own representation. |
+| kg_038 | awanu nA snehiwudu | pronoun subject + possessive modifier + noun predicate | supported now | Uses the new `possessive` element; `nA` is generated from root `nenu` with `casemarker="yoVkka"`. |
 | kg_039 | nenu badipaMwulni | first-person pronoun + predicate nominal form | needs extension | This is not a plain nominative noun complement; it needs a predicate nominal/person-marked analysis. |
 | kg_040 | axi padakakurci | demonstrative pronoun + compound noun predicate | supported now | Can be represented as subject pronoun plus noun complement if `padakakurci` is treated as a lexical noun. |
-| kg_041 | vAru mA vAru | pronoun + possessive/pronominal predicate | needs XML design | Requires possessive modifier/pronominal predicate handling. |
-| kg_042 | nA peru rAmArAvu | possessive noun phrase subject + proper noun predicate | needs XML design | Requires `nA` as a possessive modifier inside the subject noun phrase. |
+| kg_041 | vAru mA vAru | pronoun + possessive/pronominal predicate | supported now | Uses the new `possessive` element; `mA` is generated from root `nenu` with plural first-person features. |
+| kg_042 | nA peru rAmArAvu | possessive noun phrase subject + proper noun predicate | supported now | Uses the new `possessive` element inside the subject noun phrase. |
 | kg_043 | ixi BAgavawaM | demonstrative pronoun + noun predicate | supported now | Simple subject-complement pattern. |
 | kg_044 | nenu maMgalivANNi | first-person pronoun + lexicalized predicate nominal | needs extension | Similar to `nenu badipaMwulni`; should not be treated as an already-inflected surface form. |
 | kg_045 | ivi picci kAgiwAlu | plural demonstrative + adjective + plural noun | supported now | Existing adjective and plural noun paths should cover this cleanly. |
@@ -66,7 +66,10 @@ kg_028 vAdu pillavAdu
 kg_029 vIdu nOkaru
 kg_031 awanu rAmArAvu
 kg_032 ImeV sarasvawi
+kg_038 awanu nA snehiwudu
 kg_040 axi padakakurci
+kg_041 vAru mA vAru
+kg_042 nA peru rAmArAvu
 kg_043 ixi BAgavawaM
 kg_045 ivi picci kAgiwAlu
 ```
@@ -78,7 +81,6 @@ Do not generate XML yet for:
 
 ```text
 honorific gAru forms
-possessive modifiers
 emphatic -e forms
 negative equational forms
 lexicalized predicate nominal forms
@@ -91,23 +93,22 @@ Suggested next extension order
 
 ```text
 1. Generate and run the immediate XML candidates above.
-2. Design possessive modifiers: nA, mA, mI, vAri, vAlYlYa, etc.
-3. Design honorific handling for gAru forms.
-4. Design human plural lexical classes such as biccagAdu -> biccagAlYlYu.
-5. Design negative equational clauses such as ixi illu kAxu.
-6. Decide whether emphatic -e belongs in this project version or should be
+2. Design honorific handling for gAru forms.
+3. Design human plural lexical classes such as biccagAdu -> biccagAlYlYu.
+4. Design negative equational clauses such as ixi illu kAxu.
+5. Decide whether emphatic -e belongs in this project version or should be
    documented as out of scope.
 ```
 
 Possessive modifier design
 --------------------------
 
-The design note for step 2 is now documented in:
+The design note for possessive modifiers is documented in:
 
 ```text
 POSSESSIVE_MODIFIER_DESIGN.md
 ```
 
-The key decision is to add a `possessive` XML element and reuse the existing
+The implemented decision is to add a `possessive` XML element and reuse the existing
 noun/pronoun oblique logic with `casemarker="yoVkka"`, rather than placing
 surface possessive forms such as `nA` and `mA` directly in the XML.
