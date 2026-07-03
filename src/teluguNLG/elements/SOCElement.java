@@ -10,6 +10,7 @@ public class SOCElement
  private String soc;
  private String caseMarker;
  private String type;
+ private String honorific;
  private AdjectiveElement adj=null;
  private QuantifierElement quantifier=null;
  private ProperNounCompoundElement properNounCompound=null;
@@ -45,6 +46,14 @@ public void setType(String type)
 public String getType()
 {
  return this.type;
+}
+public void setHonorific(String honorific)
+{
+ this.honorific=honorific;
+}
+public String getHonorific()
+{
+ return this.honorific;
 }
 public void setAdjectiveElement(AdjectiveElement adj)
 {

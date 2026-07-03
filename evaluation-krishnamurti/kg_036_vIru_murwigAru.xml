@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><document>
+<sentence type="">
+<subject type="nominative">
+<word pos="pronoun" gender="masculine" number="singular" person="third" casemarker="">vIru</word>
+</subject>
+<complement type="nominative">
+<word pos="noun" type="proper" gender="masculine" number="singular" person="third" casemarker="" honorific="gAru">murwi</word>
+</complement>
+</sentence>
+</document>

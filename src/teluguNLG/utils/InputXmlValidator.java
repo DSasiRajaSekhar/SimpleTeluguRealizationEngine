@@ -71,6 +71,7 @@ public class InputXmlValidator {
 
 	private static void validateNounLikePhrase(Element phrase, String phraseName, int index) {
 		Element head = directWordChild(phrase);
+		Element modifier = directElementChild(phrase, "modifier");
 		Element quantifier = directElementChild(phrase, "quantifier");
 		Element possessive = directElementChild(phrase, "possessive");
 		Element properNounCompound = directElementChild(phrase, "propernouncompound");
@@ -85,6 +86,9 @@ public class InputXmlValidator {
 		}
 		if (quantifier != null) {
 			validateQuantifier(quantifier, phraseName, index);
+		}
+		if (modifier != null) {
+			validateNoHonorificInChildWord(modifier, "modifier", phraseName, index);
 		}
 		if (possessive != null) {
 			validatePossessive(possessive, phraseName, index);
@@ -117,6 +121,20 @@ public class InputXmlValidator {
 		requireAttribute(head, "number", phraseName, index);
 		requireAttribute(head, "person", phraseName, index);
 		requireAttribute(head, "casemarker", phraseName, index);
+		validateHonorific(head, phraseName, index);
+	}
+
+	private static void validateHonorific(Element head, String phraseName, int index) {
+		if (!head.hasAttribute("honorific")) {
+			return;
+		}
+		String honorific = head.getAttribute("honorific");
+		if (!"gAru".equals(honorific)) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: honorific currently supports only honorific=\"gAru\".");
+		}
+		if (!"".equals(head.getAttribute("casemarker"))) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: honorific=\"gAru\" currently supports only empty casemarker on the head word.");
+		}
 	}
 
 	private static void validatePossessive(Element possessive, String phraseName, int index) {
@@ -144,8 +162,18 @@ public class InputXmlValidator {
 		requireAttribute(word, "number", phraseName, index);
 		requireAttribute(word, "person", phraseName, index);
 		requireAttribute(word, "casemarker", phraseName, index);
+		if (word.hasAttribute("honorific")) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: honorific is not supported inside <possessive>.");
+		}
 		if (!"yoVkka".equals(word.getAttribute("casemarker"))) {
 			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: possessive <word> must have casemarker=\"yoVkka\".");
+		}
+	}
+
+	private static void validateNoHonorificInChildWord(Element parent, String parentName, String phraseName, int index) {
+		Element word = directWordChild(parent);
+		if (word != null && word.hasAttribute("honorific")) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: honorific is not supported inside <" + parentName + ">.");
 		}
 	}
 
@@ -179,6 +207,9 @@ public class InputXmlValidator {
 			requireAttribute(word, "number", phraseName, index);
 			requireAttribute(word, "person", phraseName, index);
 			requireAttribute(word, "casemarker", phraseName, index);
+			if (word.hasAttribute("honorific")) {
+				throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: honorific is not supported inside <propernouncompound>.");
+			}
 
 			if (!"noun".equals(word.getAttribute("pos"))) {
 				throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: proper noun compound words must have pos=\"noun\".");
@@ -220,6 +251,9 @@ public class InputXmlValidator {
 		requireAttribute(word, "pos", phraseName, index);
 		if (!"numeral".equals(word.getAttribute("pos"))) {
 			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: quantifier <word> must have pos=\"numeral\".");
+		}
+		if (word.hasAttribute("honorific")) {
+			throw new InvalidInputXmlException("Invalid XML in " + phraseName + "[" + index + "]: honorific is not supported inside <quantifier>.");
 		}
 	}
 

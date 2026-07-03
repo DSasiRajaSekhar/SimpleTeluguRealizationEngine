@@ -14,6 +14,10 @@ XML and generate the surface possessive forms through the code.
 | kg_029_vIdu_nOkaru.xml | vIdu nOkaru | vIdu nOkaru | matches |
 | kg_031_awanu_rAmArAvu.xml | awanu rAmArAvu | awanu rAmArAvu | matches |
 | kg_032_ImeV_sarasvawi.xml | ImeV sarasvawi | ImeV sarasvawi | matches |
+| kg_034_Ayana_mARtArugAru.xml | Ayana mARtArugAru | Ayana mARtArugAru | matches |
+| kg_035_vAru_dAktarugAru.xml | vAru dAktarugAru | vAru dAktarugAru | matches |
+| kg_036_vIru_murwigAru.xml | vIru murwigAru | vIru murwigAru | matches |
+| kg_037_Ame_sIwammagAru.xml | Ame sIwammagAru | Ame sIwammagAru | matches |
 | kg_038_awanu_nA_snehiwudu.xml | awanu nA snehiwudu | awanu nA snehiwudu | matches |
 | kg_040_axi_padakakurci.xml | axi padakakurci | axi padakakurci | matches |
 | kg_041_vAru_mA_vAru.xml | vAru mA vAru | vAru mA vAru | matches |
@@ -31,7 +35,10 @@ Notes
 - `kg_038`, `kg_041`, and `kg_042` use the `possessive` element.  The XML
   contains `nenu` with `casemarker="yoVkka"` and appropriate number features;
   the code generates `nA` or `mA`.
-- Examples involving honorific `gAru`, emphatic `-e`,
+- `kg_034`, `kg_035`, `kg_036`, and `kg_037` use the `honorific="gAru"`
+  head-word attribute.  The XML contains roots such as `dAktaru`, `murwi`, and
+  `sIwamma`; the code generates the `gAru` surface forms.
+- Examples involving emphatic `-e`,
   negative equational clauses, and lexicalized predicate nominal forms were not
   converted in this batch.  They remain documented in `BATCH_03_PLAN.md` as
   requiring extension or XML design.

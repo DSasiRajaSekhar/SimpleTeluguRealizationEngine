@@ -37,10 +37,10 @@ Batch 03 classification
 | kg_031 | awanu rAmArAvu | demonstrative/person pronoun + proper noun predicate | supported now | Can be represented as subject pronoun plus proper noun complement. |
 | kg_032 | ImeV sarasvawi | feminine demonstrative/person pronoun + proper noun predicate | supported now | Same simple subject-complement pattern. |
 | kg_033 | vIlYlYu biccagAlYlYu | plural demonstrative + human plural noun | needs extension | Requires root-to-plural handling for a human noun such as `biccagAdu -> biccagAlYlYu`; should not place `biccagAlYlYu` directly as the root. |
-| kg_034 | Ayana mARtArugAru | respectful pronoun + honorific/professional noun | needs XML design | Current code can print `gAru` only if it is already in the lexical item; a clean solution needs an honorific feature or honorific noun rule. |
-| kg_035 | vAru dAktarugAru | respectful/plural pronoun + honorific/professional noun | needs XML design | Same `gAru` honorific issue. |
-| kg_036 | vIru murwigAru | respectful/proximal pronoun + honorific proper noun | needs XML design | Same `gAru` honorific issue. |
-| kg_037 | Ame sIwammagAru | feminine pronoun + honorific proper noun | needs XML design | Same `gAru` honorific issue, with a proper-name base. |
+| kg_034 | Ayana mARtArugAru | respectful pronoun + honorific/professional noun | supported now | Uses root `mARtAru` with head-word `honorific="gAru"`. |
+| kg_035 | vAru dAktarugAru | respectful/plural pronoun + honorific/professional noun | supported now | Uses root `dAktaru` with head-word `honorific="gAru"`. |
+| kg_036 | vIru murwigAru | respectful/proximal pronoun + honorific proper noun | supported now | Uses root `murwi` with head-word `honorific="gAru"`. |
+| kg_037 | Ame sIwammagAru | feminine pronoun + honorific proper noun | supported now | Uses root `sIwamma` with head-word `honorific="gAru"`. |
 | kg_038 | awanu nA snehiwudu | pronoun subject + possessive modifier + noun predicate | supported now | Uses the new `possessive` element; `nA` is generated from root `nenu` with `casemarker="yoVkka"`. |
 | kg_039 | nenu badipaMwulni | first-person pronoun + predicate nominal form | needs extension | This is not a plain nominative noun complement; it needs a predicate nominal/person-marked analysis. |
 | kg_040 | axi padakakurci | demonstrative pronoun + compound noun predicate | supported now | Can be represented as subject pronoun plus noun complement if `padakakurci` is treated as a lexical noun. |
@@ -66,6 +66,10 @@ kg_028 vAdu pillavAdu
 kg_029 vIdu nOkaru
 kg_031 awanu rAmArAvu
 kg_032 ImeV sarasvawi
+kg_034 Ayana mARtArugAru
+kg_035 vAru dAktarugAru
+kg_036 vIru murwigAru
+kg_037 Ame sIwammagAru
 kg_038 awanu nA snehiwudu
 kg_040 axi padakakurci
 kg_041 vAru mA vAru
@@ -80,7 +84,6 @@ realization without needing new features.
 Do not generate XML yet for:
 
 ```text
-honorific gAru forms
 emphatic -e forms
 negative equational forms
 lexicalized predicate nominal forms
@@ -93,10 +96,9 @@ Suggested next extension order
 
 ```text
 1. Generate and run the immediate XML candidates above.
-2. Design honorific handling for gAru forms.
-3. Design human plural lexical classes such as biccagAdu -> biccagAlYlYu.
-4. Design negative equational clauses such as ixi illu kAxu.
-5. Decide whether emphatic -e belongs in this project version or should be
+2. Design human plural lexical classes such as biccagAdu -> biccagAlYlYu.
+3. Design negative equational clauses such as ixi illu kAxu.
+4. Decide whether emphatic -e belongs in this project version or should be
    documented as out of scope.
 ```
 
@@ -122,6 +124,6 @@ The design note for honorific `gAru` forms is documented in:
 HONORIFIC_GARU_XML_DESIGN.md
 ```
 
-The proposed decision is to keep the lexical root in the XML and add an
+The implemented decision is to keep the lexical root in the XML and add an
 optional head-word attribute such as `honorific="gAru"`, rather than placing
 surface forms such as `dAktarugAru` or `sIwammagAru` directly in the XML.

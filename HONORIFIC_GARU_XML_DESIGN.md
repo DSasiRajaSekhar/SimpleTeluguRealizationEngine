@@ -140,8 +140,23 @@ The honorific feature should be another head-word feature:
 root + honorific marker -> honorific surface form
 ```
 
-Implementation Plan
--------------------
+Implementation Status
+---------------------
+
+The first implementation is complete for direct head words with
+`honorific="gAru"` and empty `casemarker`.
+
+Implemented examples:
+
+```text
+kg_034 Ayana mARtArugAru
+kg_035 vAru dAktarugAru
+kg_036 vIru murwigAru
+kg_037 Ame sIwammagAru
+```
+
+Original Implementation Plan
+----------------------------
 
 ```text
 1. Add an optional honorific field to SOCElement.

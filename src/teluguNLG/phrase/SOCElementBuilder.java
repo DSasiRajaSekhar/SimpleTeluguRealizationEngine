@@ -45,6 +45,7 @@ private PossessiveElement pe;
                                soc.setQuantifierElement(null);
                                soc.setProperNounCompoundElement(null);
                                soc.setPossessiveElement(null);
+                               soc.setHonorific(null);
                                NodeList nl=n.getChildNodes();
 		for (int j =0; j < nl.getLength(); j++) {
                    if(nl.item(j).getNodeName().equals("#text"))
@@ -95,8 +96,10 @@ private PossessiveElement pe;
                                  soc.setGender(gender);
 				Num number = Num.getNumber(nm1.getNamedItem("number").getNodeValue());
                                 soc.setNumber(number);
-                                Person person=Person.getPerson(nm1.getNamedItem("person").getNodeValue());
+				Person person=Person.getPerson(nm1.getNamedItem("person").getNodeValue());
                                 soc.setPerson(person);
+                                if(nm1.getNamedItem("honorific") != null)
+                                 soc.setHonorific(nm1.getNamedItem("honorific").getNodeValue());
 				String str = n2.getTextContent();
                                 soc.setSOC(str);
                                // soc.setCount(count);

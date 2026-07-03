@@ -75,6 +75,8 @@ private NounClass nc;
 					subNounPhrase = pc.caseInput(soc);
 
 				}
+				if (soc.getHonorific() != null && !soc.getHonorific().trim().equals("") && subNounPhrase != null && !subNounPhrase.trim().equals(""))
+					subNounPhrase = subNounPhrase.trim() + soc.getHonorific().trim();
 			}
 			
 		

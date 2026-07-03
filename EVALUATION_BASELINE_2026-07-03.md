@@ -16,7 +16,7 @@ Compilation result: passed.
 
 Original evaluation files run: 14.
 
-Krishnamurti evaluation files run: 36.
+Krishnamurti evaluation files run: 40.
 
 Possessive evaluation files run: 5.
 
@@ -76,6 +76,10 @@ Runtime failures: none.
 | kg_029_vIdu_nOkaru.xml | vIdu nOkaru | Supported |
 | kg_031_awanu_rAmArAvu.xml | awanu rAmArAvu | Supported |
 | kg_032_ImeV_sarasvawi.xml | ImeV sarasvawi | Supported |
+| kg_034_Ayana_mARtArugAru.xml | Ayana mARtArugAru | Supported |
+| kg_035_vAru_dAktarugAru.xml | vAru dAktarugAru | Supported |
+| kg_036_vIru_murwigAru.xml | vIru murwigAru | Supported |
+| kg_037_Ame_sIwammagAru.xml | Ame sIwammagAru | Supported |
 | kg_038_awanu_nA_snehiwudu.xml | awanu nA snehiwudu | Supported |
 | kg_040_axi_padakakurci.xml | axi padakakurci | Supported |
 | kg_041_vAru_mA_vAru.xml | vAru mA vAru | Supported |
@@ -103,12 +107,12 @@ The active baseline covers:
 - numeral quantifiers for object count and person count,
 - coupled proper nouns with `mariyu`,
 - possessive modifiers generated from root pronouns/nouns using `casemarker="yoVkka"`,
+- honorific `gAru` forms generated from root nouns using `honorific="gAru"`,
 - simple demonstrative/pronoun nominal sentences,
 - adjective modifier plus noun phrases.
 
 The following are deliberately not included as supported generated XML examples yet:
 
-- honorific `gAru` forms,
 - emphatic `-e` forms,
 - negative equational forms,
 - lexicalized predicate nominal forms not represented by the current XML design.
