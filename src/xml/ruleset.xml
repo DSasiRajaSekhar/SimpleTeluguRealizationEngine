@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
+<rule id="00">
+<function case="praXama" type="nominative">subject</function>
+<function>verb</function>
+</rule>
+<rule id="01">
+<function case="praXama" type="nominative">subject</function>
+<function case="praXama">complement</function>
+<function>verb</function>
+</rule>
+<rule id="02">
+<function case="praXama" type="nominative">subject</function>
+<function case="xviwIya">complement</function>
+<function>verb</function>
+</rule>
+<rule id="03">
+<function case="praXama" type="nominative">subject</function>
+<function case="wruwIya">complement</function>
+<function>verb</function>
+</rule>
+<rule id="04">
+<function case="praXama" type="nominative">subject</function>
+<function case="cawurXi">complement</function>
+<function>verb</function>
+</rule>
+<rule id="05">
+<function case="praXama" type="nominative">subject</function>
+<function case="RaRti" type="locative">complement</function>
+<function case="wruwIya" type="comitative">complement</function>
+<function type="finite">verb</function>
+</rule>
+<rule id="06">
+<function case="praXama" type="nominative">subject</function>
+<function case="wruwIya" type="nominative">complement</function>
+<function case="praXama" type="nominative">object</function>
+<function>verb</function>
+</rule>
+<rule id="07">
+<function case="praXama" type="nominative">subject</function>
+<function case="sapwami" type="nominative">complement</function>
+<function>verb</function>
+</rule>
+<rule id="10">
+<function case="RaRTi" type="nominative">subject</function>
+<function case="praXama" type="nominative">complement</function>
+<function>verb</function>
+</rule>
+</ruleset>

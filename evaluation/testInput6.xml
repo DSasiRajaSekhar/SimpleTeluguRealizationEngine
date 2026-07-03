@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><document>
+<sentence type="">
+
+<verb type="finite">
+
+ <word pos="verb" tensemode="habitualadjective">pattu</word>
+</verb>
+
+<complement type="">
+
+<word pos="pronoun" gender="nonmasculine" number="singular" person="third" casemarker="wo">vAdu</word>
+</complement>
+
+<complement type="nominative">
+
+<word pos="noun" gender="nonmasculine" number="singular" person="third" casemarker="">kusti</word>
+</complement>
+
+<subject type="nominative">
+<word pos="pronoun" gender="masculine" number="singular" person="first" casemarker="">nenu</word>
+</subject>
+
+</sentence>
+</document>

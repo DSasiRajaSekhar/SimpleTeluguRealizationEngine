@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><document>
+<sentence type="">
+
+<verb type="finite">
+
+ <word pos="verb" tensemode="pasttense">vaccu</word>
+</verb>
+
+<complement type="nominative">
+
+<word pos="noun" gender="masculine" number="singular" person="first" casemarker="">kopam</word>
+</complement>
+
+
+
+<subject type="dative">
+<word pos="noun" gender="nonmasculine" number="singular" person="third" casemarker="ku">kamala</word>
+</subject>
+
+</sentence>
+</document>

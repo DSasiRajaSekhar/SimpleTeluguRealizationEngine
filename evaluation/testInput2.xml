@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><document>
+<sentence type="">
+
+<verb type="finite">
+
+ <word pos="verb" tensemode="pastparticiple">poducu</word>
+</verb>
+
+<complement type="nominative">
+
+<word pos="noun" gender="nonmasculine" number="singular" person="third" casemarker="">exxu</word>
+</complement>
+
+<complement type="comitative">
+
+<word pos="noun"  gender="nonmasculine" number="plural" person="third" casemarker="wo"  >kommu</word>
+</complement>
+
+<subject type=" ">
+<word pos="pronoun" gender="masculine" number="singular" person="third" casemarker="ni">vAdu</word>
+</subject>
+
+</sentence>
+</document>

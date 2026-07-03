@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><document>
+<sentence type="">
+
+<verb type="finite">
+
+ <word pos="verb" tensemode="pastparticiple">veVlYlYu</word>
+</verb>
+
+<complement type="">
+
+<word pos="noun" gender="masculine" number="singular" person="first" casemarker="ki">illu</word>
+</complement>
+
+
+
+<subject type="nominative">
+<word pos="pronoun" gender="nonmasculine" number="singular" person="third" casemarker="">kamala</word>
+</subject>
+
+</sentence>
+</document>
