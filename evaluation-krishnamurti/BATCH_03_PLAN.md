@@ -112,3 +112,16 @@ POSSESSIVE_MODIFIER_DESIGN.md
 The implemented decision is to add a `possessive` XML element and reuse the existing
 noun/pronoun oblique logic with `casemarker="yoVkka"`, rather than placing
 surface possessive forms such as `nA` and `mA` directly in the XML.
+
+Honorific gAru design
+---------------------
+
+The design note for honorific `gAru` forms is documented in:
+
+```text
+HONORIFIC_GARU_XML_DESIGN.md
+```
+
+The proposed decision is to keep the lexical root in the XML and add an
+optional head-word attribute such as `honorific="gAru"`, rather than placing
+surface forms such as `dAktarugAru` or `sIwammagAru` directly in the XML.
