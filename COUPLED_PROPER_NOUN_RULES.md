@@ -30,7 +30,7 @@ Examples:
 ```text
 sIwa + rAmudu -> sIwA rAmulu
 subbarAvu + suMxaraM -> subbarAvu suMxarAlu
-britan + ameVrikA -> britan amerikAlu
+britan + ameVrikA -> britan ameVrikAlu
 ```
 
 Important Distinction
@@ -79,7 +79,7 @@ formation:
 ```text
 rAmudu -> rAmulu
 suMxaraM -> suMxarAlu
-ameVrikA -> amerikAlu
+ameVrikA -> ameVrikAlu
 ```
 
 Current XML Limitation
@@ -230,7 +230,7 @@ Example 3:
 Expected output:
 
 ```text
-britan amerikAlu
+britan ameVrikAlu
 ```
 
 Why This XML Design
@@ -292,7 +292,7 @@ The final word should use ordinary noun plural realization:
 ```text
 rAmudu -> rAmulu
 suMxaraM -> suMxarAlu
-ameVrikA -> amerikAlu
+ameVrikA -> ameVrikAlu
 ```
 
 For proper names ending in `udu` in this construction, the final noun plural is
@@ -326,7 +326,7 @@ The initial test cases should be:
 ```text
 sIwa + rAmudu -> sIwA rAmulu
 subbarAvu + suMxaraM -> subbarAvu suMxarAlu
-britan + ameVrikA -> britan amerikAlu
+britan + ameVrikA -> britan ameVrikAlu
 ```
 
 The current Krishnamurti output files corresponding to these are:
@@ -334,7 +334,7 @@ The current Krishnamurti output files corresponding to these are:
 ```text
 kg_023_sIwA_rAmulu.xml -> sIwA rAmulu
 kg_024_subbarAvu_suMxarAlu.xml -> subbarAvu suMxarAlu
-kg_025_britan_amerikAlu.xml -> britan amerikAlu
+kg_025_britan_ameVrikAlu.xml -> britan ameVrikAlu
 ```
 
 Note: any spelling differences in file names should be checked against the WX

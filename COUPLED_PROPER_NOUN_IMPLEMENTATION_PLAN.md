@@ -32,7 +32,7 @@ Target outputs:
 ```text
 sIwA rAmulu
 subbarAvu suMxarAlu
-britan amerikAlu
+britan ameVrikAlu
 ```
 
 Target XML shape:
@@ -331,7 +331,7 @@ Update:
 ```text
 evaluation-krishnamurti/kg_023_sIwA_rAmulu.xml
 evaluation-krishnamurti/kg_024_subbarAvu_suMxarAlu.xml
-evaluation-krishnamurti/kg_025_britan_amerikAlu.xml
+evaluation-krishnamurti/kg_025_britan_ameVrikAlu.xml
 ```
 
 Use the new controlled XML shape:
@@ -348,7 +348,7 @@ Checkpoint expected outputs:
 ```text
 kg_023_sIwA_rAmulu.xml -> sIwA rAmulu
 kg_024_subbarAvu_suMxarAlu.xml -> subbarAvu suMxarAlu
-kg_025_britan_amerikAlu.xml -> britan amerikAlu
+kg_025_britan_ameVrikAlu.xml -> britan ameVrikAlu
 ```
 
 Step 10: Regression Tests

@@ -69,7 +69,7 @@ Runtime failures: none.
 | kg_022_mugguru_rAmamurwulu.xml | mugguru rAmamurwulu | Supported |
 | kg_023_sIwA_rAmulu.xml | sIwA rAmulu | Supported |
 | kg_024_subbarAvu_suMxarAlu.xml | subbarAvu suMxarAlu | Supported |
-| kg_025_britan_amerikAlu.xml | britan amerikAlu | Supported |
+| kg_025_britan_ameVrikAlu.xml | britan ameVrikAlu | Supported |
 | kg_026_reMdu_pustakAlu.xml | reMdu pustakAlu | Supported |
 | kg_027_iravE_Exu_maMxi.xml | iravE Exu maMxi | Supported |
 | kg_028_vAdu_pillavAdu.xml | vAdu pillavAdu | Supported |

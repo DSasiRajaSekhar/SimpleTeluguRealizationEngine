@@ -68,7 +68,7 @@ kg_021_ixxaru_prakAsAlu.xml -> renlYlYu prakAsAlu
 kg_022_mugguru_rAmamurwulu.xml -> mugguru rAmamurwulu
 kg_023_sIwA_rAmulu.xml -> sIwA rAmulu
 kg_024_subbarAvu_suMxarAlu.xml -> subbarAvu suMxarAlu
-kg_025_britan_amerikAlu.xml -> britan amerikAlu
+kg_025_britan_ameVrikAlu.xml -> britan ameVrikAlu
 ```
 
 Known Count-Noun Gap

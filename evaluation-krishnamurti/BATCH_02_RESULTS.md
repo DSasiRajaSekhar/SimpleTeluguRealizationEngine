@@ -10,7 +10,7 @@ Source: "Plural of Proper Nouns" examples from
 | kg_022_mugguru_rAmamurwulu.xml | mUdu + person-count + rAmamurwi plural | mugguru rAmamurwulu | matches |
 | kg_023_sIwA_rAmulu.xml | sIwA rAmulu | sIwA rAmulu | matches |
 | kg_024_subbarAvu_suMxarAlu.xml | subbarAvu suMxarAlu | subbarAvu suMxarAlu | matches |
-| kg_025_britan_amerikAlu.xml | britan amerikAlu | britan amerikAlu | matches |
+| kg_025_britan_ameVrikAlu.xml | britan ameVrikAlu | britan ameVrikAlu | matches |
 | kg_026_reMdu_pustakAlu.xml | reMdu + object-count + pustakaM plural | reMdu pustakAlu | matches |
 | kg_027_iravE_Exu_maMxi.xml | iravE Exu + person-count fallback | iravE Exu maMxi | matches |
 

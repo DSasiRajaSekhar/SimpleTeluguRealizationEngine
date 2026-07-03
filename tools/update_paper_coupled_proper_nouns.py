@@ -61,7 +61,7 @@ def main():
     )
     impl_body_1 = insert_paragraph_after(
         background,
-        "A second extension handles coupled proper-noun expressions that express the relation mariyu without an overt surface conjunction. Descriptive Telugu grammar records examples such as sIwa + rAmudu -> sIwA rAmulu, subbarAvu + suMxaraM -> subbarAvu suMxarAlu, and britan + ameVrikA -> britan amerikAlu. These forms cannot be represented cleanly by treating the first name as an ordinary subject and the second name as an ordinary complement, because the two names together form one coordinated proper-noun expression. The extension therefore treats the construction as a single noun phrase with an internal relation.",
+        "A second extension handles coupled proper-noun expressions that express the relation mariyu without an overt surface conjunction. Descriptive Telugu grammar records examples such as sIwa + rAmudu -> sIwA rAmulu, subbarAvu + suMxaraM -> subbarAvu suMxarAlu, and britan + ameVrikA -> britan ameVrikAlu. These forms cannot be represented cleanly by treating the first name as an ordinary subject and the second name as an ordinary complement, because the two names together form one coordinated proper-noun expression. The extension therefore treats the construction as a single noun phrase with an internal relation.",
         "Normal",
     )
     insert_paragraph_after(
@@ -76,7 +76,7 @@ def main():
     )
     eval_body = insert_paragraph_after(
         quant_eval_body,
-        "The coupled proper-noun extension was evaluated with three Krishnamurti-based examples. The system generates sIwA rAmulu from roots sIwa and rAmudu, subbarAvu suMxarAlu from subbarAvu and suMxaraM, and britan amerikAlu from britan and amerikA. These examples are represented with propernouncompound relation=\"mariyu\" rather than by pre-inflecting the words in the XML. The original fourteen evaluation examples and the earlier Krishnamurti noun and quantifier examples were rerun after this extension, and their outputs remained unchanged.",
+        "The coupled proper-noun extension was evaluated with three Krishnamurti-based examples. The system generates sIwA rAmulu from roots sIwa and rAmudu, subbarAvu suMxarAlu from subbarAvu and suMxaraM, and britan ameVrikAlu from britan and ameVrikA. These examples are represented with propernouncompound relation=\"mariyu\" rather than by pre-inflecting the words in the XML. The original fourteen evaluation examples and the earlier Krishnamurti noun and quantifier examples were rerun after this extension, and their outputs remained unchanged.",
         "Normal",
     )
     insert_paragraph_after(
